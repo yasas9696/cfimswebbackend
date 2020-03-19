@@ -4,7 +4,8 @@ const movieservice = require('../services/movieService');
 
 /* GET movies listing. */
 router.get('/', function(req, res, next) {
-  movieservice.getAllmovies().then(movies=>
+  console.log("test")
+  movieservice.getAllMovies().then(movies=>
     res.send(movies));
 });
 router.get('/:id', function(req, res, next) {

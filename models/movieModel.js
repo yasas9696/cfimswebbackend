@@ -26,7 +26,6 @@ const  movies = db.seq.define(
             type:Sequelize.STRING
         },
 
-
     },
    { timestamps:false}
     

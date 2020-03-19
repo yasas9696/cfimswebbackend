@@ -122,7 +122,7 @@ module.exports.deleteUser = function(id){
 
 module.exports.getUserbyID = function(id){
     return User.findOne({
-        where:{EmpID:id},
+        where:{ID:id},
         raw:true
     }).then(res=>{
         Response={

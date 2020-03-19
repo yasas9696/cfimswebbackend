@@ -69,6 +69,7 @@ module.exports.updateMovie = function(movie,id){
 
 }
 module.exports.getAllMovies = function(){
+    console.log("test")
     return Movie.findAll().then(res=>{Response={
         code:0,
         message:'',
