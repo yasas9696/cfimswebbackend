@@ -1,8 +1,8 @@
 const Sequelize = require("sequelize");
 const db = require("../DBConnection/connection");
 
-const  movies = db.seq.define(
-    "movies",
+const  history = db.seq.define(
+    "history",
     {
         date:{
             type:Sequelize.DATE
@@ -26,4 +26,4 @@ const  movies = db.seq.define(
    { timestamps:false}
     
 )
-module.exports = movies;
+module.exports = history;

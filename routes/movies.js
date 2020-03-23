@@ -9,19 +9,19 @@ router.get('/', function(req, res, next) {
     res.send(movies));
 });
 router.get('/:id', function(req, res, next) {
-  movieservice.getmoviebyId(req.params.id).then(movies=>
+  movieservice.getMoviebyId(req.params.id).then(movies=>
     res.send(movies));
 });
 router.post('/', function(req, res, next) {
-  movieservice.addmovie(req.body).then(movies=>
+  movieservice.addMovie(req.body).then(movies=>
     res.send(movies));
 });
 router.put('/:id', function(req, res, next) {
-  movieservice.updatemovie(req.body,req.params.id).then(movies=>
+  movieservice.updateMovie(req.body,req.params.id).then(movies=>
     res.send(movies));
 });
 router.delete('/:id', function(req, res, next) {
-  movieservice.deletemovie(req.params.id).then(movies=>
+  movieservice.deleteMovie(req.params.id).then(movies=>
     res.send(movies));
 });
 

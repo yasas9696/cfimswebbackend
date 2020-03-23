@@ -3,21 +3,20 @@ const History = require("../models/historyModel");
 module.exports.addHistory = function(newHistory){
     console.log(newHistory)
     let{
-        item_type,
-        item_name,
-        item_model,
-        item_qr,
-        item_status,
-        item_capacity,
-        item_image
+
+        date,
+        event,
+        jobNumber,
+        department,
+        empNo
+        
+        
     } = newHistory;
-    return History.create({ item_type,
-        item_name,
-        item_model,
-        item_qr,
-        item_status,
-        item_capacity,
-        item_image})
+    return History.create({ date,
+        event,
+        jobNumber,
+        department,
+        empNo})
         .then(res=>{Response={
             code:0,
             message:'',
@@ -37,21 +36,17 @@ module.exports.addHistory = function(newHistory){
 
 module.exports.updateHistory = function(history,id){
     let{
-        item_type,
-        item_name,
-        item_model,
-        item_qr,
-        item_status,
-        item_capacity,
-        item_image
+        date,
+        event,
+        jobNumber,
+        department,
+        empNo
     } = history;
-    return History.update({ item_type,
-        item_name,
-        item_model,
-        item_qr,
-        item_status,
-        item_capacity,
-        item_image},{where:{id:id}})
+    return History.update({  date,
+        event,
+        jobNumber,
+        department,
+        empNo},{where:{id:id}})
         .then(res=>{Response={
             code:0,
             message:'',

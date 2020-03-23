@@ -13,17 +13,17 @@ router.get('/:id', function(req, res, next) {
 });
 router.post('/', function(req, res, next) {
   console.log(req.body)
-  historyService.addhistory(req.body).then(history=>
+  historyService.addHistory(req.body).then(history=>
     res.send(history));
 });
 router.put('/:id', function(req, res, next) {
 
-  historyService.updatehistory(req.body,req.params.id).then(historys=>
+  historyService.updateHistory(req.body,req.params.id).then(historys=>
     res.send(historys));
   
 });
 router.delete('/:id', function(req, res, next) {
-  historyService.deletehistory(req.params.id).then(historys=>
+  historyService.deleteHistory(req.params.id).then(historys=>
     res.send(historys));
  
 });
