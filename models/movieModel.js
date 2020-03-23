@@ -25,6 +25,7 @@ const  movies = db.seq.define(
         item_image:{
             type:Sequelize.STRING
         },
+        
 
     },
    { timestamps:false}
