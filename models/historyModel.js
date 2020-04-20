@@ -1,8 +1,8 @@
 const Sequelize = require("sequelize");
 const db = require("../DBConnection/connection");
 
-const  history = db.seq.define(
-    "history",
+const  histories = db.seq.define(
+    "histories",
     {
         date:{
             type:Sequelize.DATE
@@ -26,4 +26,4 @@ const  history = db.seq.define(
    { timestamps:false}
     
 )
-module.exports = history;
+module.exports = histories;

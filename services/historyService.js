@@ -34,14 +34,14 @@ module.exports.addHistory = function(newHistory){
 
 }
 
-module.exports.updateHistory = function(history,id){
+module.exports.updateHistory = function(histories,id){
     let{
         date,
         event,
         jobNumber,
         department,
         empNo
-    } = history;
+    } = histories;
     return History.update({  date,
         event,
         jobNumber,
