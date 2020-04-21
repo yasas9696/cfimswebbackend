@@ -67,7 +67,7 @@ module.exports.getAllHistorys = function(){
     return History.findAll().then(res=>{Response={
         code:0,
         message:'',
-        result:res
+        history: res
 
     }
     return Response;})

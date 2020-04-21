@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2020 at 11:22 AM
+-- Generation Time: Apr 21, 2020 at 07:35 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -46,11 +46,11 @@ INSERT INTO `cart` (`cartID`, `itemName`, `itemID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `history`
+-- Table structure for table `histories`
 --
 
-CREATE TABLE `history` (
-  `historyID` int(11) NOT NULL,
+CREATE TABLE `histories` (
+  `id` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `event` varchar(50) NOT NULL,
   `jobNumber` varchar(10) NOT NULL,
@@ -59,10 +59,10 @@ CREATE TABLE `history` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `history`
+-- Dumping data for table `histories`
 --
 
-INSERT INTO `history` (`historyID`, `date`, `event`, `jobNumber`, `department`, `empNo`) VALUES
+INSERT INTO `histories` (`id`, `date`, `event`, `jobNumber`, `department`, `empNo`) VALUES
 (1, '2020-01-15 08:15:28', 'leo 3x3', '1', 'jokers films', '1'),
 (2, '2020-01-15 08:15:28', 'lavenro wedin expo', '2', 'heavenly made', '2');
 
@@ -84,7 +84,7 @@ CREATE TABLE `historyitemmap` (
 --
 
 CREATE TABLE `movies` (
-  `item_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `item_type` varchar(256) NOT NULL,
   `item_name` varchar(50) NOT NULL,
   `item_model` varchar(50) NOT NULL,
@@ -98,7 +98,7 @@ CREATE TABLE `movies` (
 -- Dumping data for table `movies`
 --
 
-INSERT INTO `movies` (`item_id`, `item_type`, `item_name`, `item_model`, `item_qr`, `item_status`, `item_capacity`, `item_image`) VALUES
+INSERT INTO `movies` (`id`, `item_type`, `item_name`, `item_model`, `item_qr`, `item_status`, `item_capacity`, `item_image`) VALUES
 (1, 'camera', 'Canon', 'A365', '2001618861684', 'Unavailable', '20', 'asdasdasd'),
 (7, 'memory card', 'Memory card', 'amd', '1517151517884', 'Unavailable', '23', 'asdsadas'),
 (8, 'sdasd', 'Drone', 'ABC', '123', 'Available', '0', 'sdasd'),
@@ -122,7 +122,7 @@ CREATE TABLE `percart` (
 --
 
 CREATE TABLE `users` (
-  `EmpID` int(5) NOT NULL,
+  `ID` int(5) NOT NULL,
   `username` varchar(25) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL,
@@ -135,56 +135,57 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`EmpID`, `username`, `email`, `password`, `name`, `dept`, `type`) VALUES
-(1, 'yasas9696', 'yasas9696@gmail.com', '123', 'yas k', 'films', 'department head'),
+INSERT INTO `users` (`ID`, `username`, `email`, `password`, `name`, `dept`, `type`) VALUES
+(1, 'yasas9696', 'yasas9696@gmail.com', '123', 'yas k', 'films', 'admin'),
 (3, 'kulik', 'kulinda.jokersarmy@gmail.com', '123', '', 'Cyber Labs', 'Department Head'),
 (4, 'barana', 'barana.jokersarmy@gmail.com', '123', '', 'CEO', 'Candy Factory Group'),
 (5, 'harsha', 'harsha.jokersarmy@gmail.com', '123', '', 'Jokers Films', 'department head'),
-(6, 'mac123', 'mac@gmail.com', '123', '', 'it', 'engineer');
+(6, 'mac123', 'mac@gmail.com', '123', '', 'it', 'engineer'),
+(7, 'sfds', 'dfs', 'dsfsdf', 'sdfsf', 'sfsf', 'sdfs');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `history`
+-- Indexes for table `histories`
 --
-ALTER TABLE `history`
-  ADD PRIMARY KEY (`historyID`);
+ALTER TABLE `histories`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `movies`
 --
 ALTER TABLE `movies`
-  ADD PRIMARY KEY (`item_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`EmpID`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `history`
+-- AUTO_INCREMENT for table `histories`
 --
-ALTER TABLE `history`
-  MODIFY `historyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `histories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `EmpID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -71,12 +71,14 @@ module.exports.updateMovie = function(movie,id){
 module.exports.getAllMovies = function(){
     console.log("test")
     return Movie.findAll().then(res=>{Response={
-        code:0,
-        message:'',
-        result:res
+        code: 0,
+        message: '',
+        movie: res
 
     }
-    return Response;})
+    return Response;
+}
+)
 
         .catch(err =>{Response={
             code:1,
