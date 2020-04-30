@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var historyRouter = require('./routes/histories');
 var loginRouter = require('./routes/login');
 var moviesRouter = require('./routes/movies');
+var recordsRouter = require('./routes/records');
 
 var app = express();
 
@@ -26,7 +27,7 @@ app.use(function (req, res, next) {
 });
 const db = require('./DBConnection/connection')
 db.seq.authenticate().then(()=>{
-  console.log('connected db')
+  console.log('**--Database Connected--**')
 })
 .catch(err=>{
   console.log(err)
@@ -46,7 +47,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/historys', historyRouter);
 app.use('/movies',moviesRouter);
-app.use('/login',loginRouter);
+app.use('/login', loginRouter);
+app.use('/records', recordsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
